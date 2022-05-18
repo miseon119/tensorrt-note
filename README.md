@@ -9,4 +9,4 @@ trtexec --explicitBatch --onnx=yolo.onnx --saveEngine=model.plan --workspace=102
 ```
 > Note: You can change model.plan to model.engine; Your engine input name should match onnx file's input name.
 
-Docker : `nvcr.io/nvidia/tensorrt:21.10-py3`
+Docker : `nvcr.io/nvidia/tensorrt:22.04-py3`
