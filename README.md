@@ -13,10 +13,18 @@ Docker : `nvcr.io/nvidia/tensorrt:22.04-py3`
 
 ### Static Shape ONNX to TensorRT Engine
 
+ONNX model in full-dimensions mode with **static input shapes**:
 ```bash
 trtexec --onnx=model.onnx
 ```
 
 > In this case, model.onnx has a static input shape, e.g. [8,3,416,416]
 
+
+ONNX model with dynamic input `[-1,3,224,244]`
+```bash
+trtexec --onnx=model.onnx --shapes=input:32x3x244x244
+```
+
+[More](https://github.com/NVIDIA/TensorRT/tree/main/samples/trtexec)
 
