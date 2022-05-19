@@ -10,3 +10,13 @@ trtexec --explicitBatch --onnx=yolo.onnx --saveEngine=model.plan --workspace=102
 > Note: You can change model.plan to model.engine; Your engine input name should match onnx file's input name.
 
 Docker : `nvcr.io/nvidia/tensorrt:22.04-py3`
+
+### Static Shape ONNX to TensorRT Engine
+
+```bash
+trtexec --onnx=model.onnx
+```
+
+> In this case, model.onnx has a static input shape, e.g. [8,3,416,416]
+
+
