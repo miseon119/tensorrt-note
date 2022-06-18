@@ -49,31 +49,7 @@ cudart.cudaFree(inputD0)
 cudart.cudaFree(outputD0)
 ```
 
-+ 输入张量形状 (1,1,3,3)
-$$
-\left[\begin{matrix}
-    \left[\begin{matrix}
-        \left[\begin{matrix}
-            -4. & -3. & -2. \\
-            -1. &  0. &  1. \\
-             2. &  3. &  4.
-        \end{matrix}\right]
-    \end{matrix}\right]
-\end{matrix}\right]
-$$
-
-+ 输出张量形状 (1,1,3,3)
-$$
-\left[\begin{matrix}
-    \left[\begin{matrix}
-        \left[\begin{matrix}
-            0. & 0. & 0. \\
-            0. & 0. & 1. \\
-            2. & 3. & 4.
-        \end{matrix}\right]
-    \end{matrix}\right]
-\end{matrix}\right]
-$$
+![output1](images/output1.png)
 
 ---
 ### type & alpha & beta
@@ -85,16 +61,8 @@ $$
 ```
 
 + 指定 Clip 激活函数使输出值限制在 -2 到 2 之间，输出张量形状 (1,1，3,3)
-$$
-\left[\begin{matrix}
-    \left[\begin{matrix}
-        \left[\begin{matrix}
-            -2. & -2. & -2. \\
-            -1. &  0. &  1. \\
-             2. &  2. &  2.
-        \end{matrix}\right]
-    \end{matrix}\right]
-\end{matrix}\right]
-$$
+
+![output2](images/output2.png)
+
 
 ![activation-table](images/activation-table.png)
