@@ -56,7 +56,7 @@ def run():
         with open(trtFile, 'wb') as f:                                          # 将序列化网络保存为 .plan 文件
             f.write(engineString)
             print("Succeeded saving .plan file!")
-
+#--------------------------------------------------------------------------------------------------------------运行期
     engine = trt.Runtime(logger).deserialize_cuda_engine(engineString)          # 使用 Runtime 来创建 engine
     if engine == None:
         print("Failed building engine!")
