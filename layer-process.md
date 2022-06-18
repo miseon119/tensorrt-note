@@ -97,3 +97,4 @@ $$
 \end{matrix}\right]
 $$
 
+![activation-table](images/activation-table.png)
