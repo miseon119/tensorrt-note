@@ -24,3 +24,22 @@ polygraphy run model.onnx \
 # --trt-max-shapes 'input0:[16,320,256]' 'input1:[16，320]' 'input2:[16]'
 ```
 
+> Example 2:  .onnx 构建一个 TensorRT 引擎，输出所有层的计算结果作对比
+
+```bash
+polygraphy run model.onnx \
+    --onnxrt --trt \
+    --workspace 1000000000 \
+    --save-engine=model-FP32-MarkAll.plan \
+    --atol 1e-3 --rtol 1e-3 \
+    --verbose \
+    --onnx-outputs mark all \
+    --trt-outputs mark all \
+    --trt-min-shapes 'tensor-0:[1,1,28,28]' \
+    --trt-opt-shapes 'tensor-0:[4,1,28,28]' \
+    --trt-max-shapes 'tensor-0:[16,1,28,28]' \
+    --input-shapes   'tensor-0:[4,1,28,28]'
+    > result-run-FP32-MarkAll.txt
+```
+part of output:
+![polygraphy1](./images/polygraphy1.png) 
