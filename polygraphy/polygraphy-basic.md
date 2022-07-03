@@ -43,3 +43,20 @@ polygraphy run model.onnx \
 ```
 part of output:
 ![polygraphy1](./images/polygraphy1.png) 
+
+> Example 3: .onnx 构建一个 TensorRT 引擎，使用 FP32 精度，保存使用的脚本
+
+```bash
+polygraphy run model.onnx \
+    --onnxrt --trt \
+    --workspace 1000000000 \
+    --save-engine=model-FP32.plan \
+    --atol 1e-3 --rtol 1e-3 \
+    --verbose \
+    --gen-script="./polygraphyRun.py" \
+    --trt-min-shapes 'tensor-0:[1,1,28,28]' \
+    --trt-opt-shapes 'tensor-0:[4,1,28,28]' \
+    --trt-max-shapes 'tensor-0:[16,1,28,28]' \
+    --input-shapes   'tensor-0:[4,1,28,28]' \
+    > result-run-FP32.txt
+```
