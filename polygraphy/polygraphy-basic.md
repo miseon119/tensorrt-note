@@ -119,3 +119,14 @@ polygraphy inspect capability model.onnx
 polygraphy inspect capability model-NonZero.onnx > result-NonZero.txt
 # 产生目录 .results，包含网络分析信息和支持的子图(.onnx)、不支持的子图(.onnx)
 ```
+
+## polygraphy surgeon
+
+对上面的 .onnx 进行图优化
+```bash
+polygraphy surgeon sanitize model.onnx \
+    --fold-constant \
+    -o model-foldConstant.onnx \
+    > result-surgeon.txt 
+```
+![surgeon](./images/polygraphy-surgeon.png)
