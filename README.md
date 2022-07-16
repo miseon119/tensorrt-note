@@ -1,4 +1,4 @@
-# tensorrt-notes
+# tensorrt-note
 
 ## ONNX to TensorRT
 
